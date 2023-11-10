@@ -18,8 +18,14 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         // Do any additional setup after loading the view.
         mapView.delegate = self
         let startCoordinate = CLLocationCoordinate2D(latitude: 38.656439, longitude: -90.309591)
-        let middleCoordinate = CLLocationCoordinate2D(latitude: 38.655447, longitude: -90.300027)
-                let endCoordinate = CLLocationCoordinate2D(latitude: 38.644670, longitude: -90.285348)
+        let middleCoordinate = CLLocationCoordinate2D(latitude: 38.653928, longitude: -90.284663)
+                let endCoordinate = CLLocationCoordinate2D(latitude: 38.644594,  longitude: -90.285547
+                                                           
+
+                                                           
+
+                                                           
+)
 
                 let library = MKPointAnnotation()
                 library.coordinate = startCoordinate
@@ -29,7 +35,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let directionsRequest = MKDirections.Request()
                 directionsRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: startCoordinate))
                 directionsRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: middleCoordinate))
-                directionsRequest.transportType = .automobile
+        directionsRequest.transportType = .walking
                 var directions = MKDirections(request: directionsRequest)
                 directions.calculate { (response, error) in
                     if let route = response?.routes.first {
@@ -41,7 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
        // Researched at: https://stackoverflow.com/questions/23104337/ios-mkdirections-for-multiple-destinations-and-a-single-source
         directionsRequest.source = MKMapItem(placemark: MKPlacemark(coordinate: middleCoordinate))
         directionsRequest.destination = MKMapItem(placemark: MKPlacemark(coordinate: endCoordinate))
-        directionsRequest.transportType = .automobile
+        directionsRequest.transportType = .walking
         directions = MKDirections(request: directionsRequest)
         directions.calculate { (response, error) in
             let route = response?.routes.first
