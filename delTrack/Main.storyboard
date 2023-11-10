@@ -36,11 +36,45 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="fby-Sb-ovt"/>
+                    <connections>
+                        <segue destination="thi-M0-jSS" kind="show" id="kmc-Bg-gS3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAM-Ux-Qkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1204" y="-556"/>
         </scene>
+
+        <!--Points Of Interest And Fun Facts View Controller-->
+        <scene sceneID="vIZ-lO-6KE">
+            <objects>
+                <tableViewController id="thi-M0-jSS" customClass="PointsOfInterestAndFunFactsViewController" customModule="delTrack" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="oeh-Ld-2Or">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="wYW-Rq-dq1">
+                                <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="wYW-Rq-dq1" id="sc4-fC-Hkf">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="thi-M0-jSS" id="aHx-rJ-jQb"/>
+                            <outlet property="delegate" destination="thi-M0-jSS" id="taO-n7-fAw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="XHc-pD-0kS"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dq4-bR-Eon" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2164" y="-556"/>
+        </scene>
+         monishWelcomePage
         <!--Welcome View Controller-->
         <scene sceneID="Eh0-bw-xxP">
             <objects>
