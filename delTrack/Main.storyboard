@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fqg-Z7-ozF">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jlo-Fn-Odz">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -25,24 +26,32 @@
             </objects>
             <point key="canvasLocation" x="1204" y="113"/>
         </scene>
-        <!--View Controller-->
+        <!--Map View Controller-->
         <scene sceneID="2zY-8v-qp8">
             <objects>
-                <viewController id="jlo-Fn-Odz" sceneMemberID="viewController">
+                <viewController id="jlo-Fn-Odz" customClass="MapViewController" customModule="delTrack" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ud7-py-OrH">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHj-N4-fvx">
+                                <rect key="frame" x="16" y="103" width="361" height="529"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XFh-iH-iWV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="fby-Sb-ovt"/>
                     <connections>
+                        <outlet property="mapView" destination="bHj-N4-fvx" id="V60-Bi-zmq"/>
                         <segue destination="thi-M0-jSS" kind="show" id="kmc-Bg-gS3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vAM-Ux-Qkn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1204" y="-556"/>
+            <point key="canvasLocation" x="1203.8167938931297" y="-556.33802816901414"/>
         </scene>
 
         <!--Points Of Interest And Fun Facts View Controller-->
@@ -140,11 +149,11 @@
             </objects>
             <point key="canvasLocation" x="-741" y="-252"/>
         </scene>
-        <!--Item 1-->
+        <!--Map-->
         <scene sceneID="gfm-72-gow">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KUs-D5-9o4" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="9qK-eh-8p9"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="9qK-eh-8p9"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ZwG-yN-thz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>
@@ -159,11 +168,11 @@
             </objects>
             <point key="canvasLocation" x="162.59541984732823" y="-556.33802816901414"/>
         </scene>
-        <!--Item 2-->
+        <!--List-->
         <scene sceneID="uBV-Xd-eir">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="m2M-2b-zPt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 2" id="6nC-aR-9Bb"/>
+                    <tabBarItem key="tabBarItem" title="List" id="6nC-aR-9Bb"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hCs-d3-Lzz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="56"/>

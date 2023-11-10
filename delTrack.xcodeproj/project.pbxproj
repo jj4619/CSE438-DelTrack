@@ -17,6 +17,7 @@
 		3B79757C2AF84BC7006675C9 /* delTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79757B2AF84BC7006675C9 /* delTrackTests.swift */; };
 		3B7975862AF84BC7006675C9 /* delTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7975852AF84BC7006675C9 /* delTrackUITests.swift */; };
 		3B7975882AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7975872AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift */; };
+		99C75CD72AFD312800345DBA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75CD62AFD312800345DBA /* MapViewController.swift */; };
 		3BB40C0B2AFC3CC0004C17D4 /* welcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BB40C0A2AFC3CC0004C17D4 /* welcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +53,7 @@
 		3B7975812AF84BC7006675C9 /* delTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = delTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7975852AF84BC7006675C9 /* delTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delTrackUITests.swift; sourceTree = "<group>"; };
 		3B7975872AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		99C75CD62AFD312800345DBA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		3BB40C0A2AFC3CC0004C17D4 /* welcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = welcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,6 +113,7 @@
 				3B79756F2AF84BC7006675C9 /* LaunchScreen.storyboard */,
 				03E081AB2AFEB1F1006D35AC /* PointsOfInterestAndFunFactsViewController.swift */,
 				3B7975722AF84BC7006675C9 /* Info.plist */,
+				99C75CD62AFD312800345DBA /* MapViewController.swift */,
 				3BB40C0A2AFC3CC0004C17D4 /* welcomeViewController.swift */,
 			);
 			path = delTrack;
@@ -269,6 +272,7 @@
 				3B7975652AF84BC6006675C9 /* AppDelegate.swift in Sources */,
 				03E081AC2AFEB1F1006D35AC /* PointsOfInterestAndFunFactsViewController.swift in Sources */,
 				3B7975672AF84BC6006675C9 /* SceneDelegate.swift in Sources */,
+				99C75CD72AFD312800345DBA /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
