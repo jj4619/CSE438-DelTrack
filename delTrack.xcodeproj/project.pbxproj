@@ -16,6 +16,7 @@
 		3B79757C2AF84BC7006675C9 /* delTrackTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B79757B2AF84BC7006675C9 /* delTrackTests.swift */; };
 		3B7975862AF84BC7006675C9 /* delTrackUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7975852AF84BC7006675C9 /* delTrackUITests.swift */; };
 		3B7975882AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B7975872AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift */; };
+		99C75CD72AFD312800345DBA /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99C75CD62AFD312800345DBA /* MapViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		3B7975812AF84BC7006675C9 /* delTrackUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = delTrackUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7975852AF84BC7006675C9 /* delTrackUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delTrackUITests.swift; sourceTree = "<group>"; };
 		3B7975872AF84BC7006675C9 /* delTrackUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = delTrackUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		99C75CD62AFD312800345DBA /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				3B79756D2AF84BC7006675C9 /* Assets.xcassets */,
 				3B79756F2AF84BC7006675C9 /* LaunchScreen.storyboard */,
 				3B7975722AF84BC7006675C9 /* Info.plist */,
+				99C75CD62AFD312800345DBA /* MapViewController.swift */,
 			);
 			path = delTrack;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				3B7975692AF84BC6006675C9 /* ViewController.swift in Sources */,
 				3B7975652AF84BC6006675C9 /* AppDelegate.swift in Sources */,
 				3B7975672AF84BC6006675C9 /* SceneDelegate.swift in Sources */,
+				99C75CD72AFD312800345DBA /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
