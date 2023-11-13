@@ -111,5 +111,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             }
             return MKOverlayRenderer(overlay: overlay)
         }
+    
+    //source: https://stackoverflow.com/questions/51591670/how-to-identify-when-a-annotation-is-pressed-which-one-it-is
+    func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
+        let PIVC =  PointsOfInterestAndFunFactsViewController()
+        PIVC.currStation = view.annotation?.title ?? "U City Library"
+        navigationController?.pushViewController(PIVC, animated: true)
+    }
 }
 
