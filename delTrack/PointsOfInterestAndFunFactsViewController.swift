@@ -44,6 +44,8 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
         header.textAlignment = .center
         header.font = UIFont.systemFont(ofSize: 30.0)
         tableView.tableHeaderView = header
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,13 +65,18 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let text = UITextView()
+        text.adjustsFontForContentSizeCategory = true
         if indexPath.section == sections["pointsofinterest"] {
-            cell.textLabel?.text = pointsOfInterest[currStation!]![indexPath.row]
+            text.text = pointsOfInterest[currStation!]![indexPath.row]
         }else if indexPath.section == sections["funfacts"]{
-            cell.textLabel?.text = funFacts[currStation!]![indexPath.row]
+            text.text = funFacts[currStation!]![indexPath.row]
         }else{
-            cell.textLabel?.text = "There was an error"
+            text.text = "There was an error"
         }
+        text.sizeToFit()
+//        text.layoutIfNeeded()
+        cell.addSubview(text)
         return cell
     }
     
