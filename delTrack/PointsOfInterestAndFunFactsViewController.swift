@@ -10,7 +10,6 @@ import UIKit
 
 class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
-    
     let sections = ["pointsofinterest" : 0, "funfacts" : 1]
     
     let pointsOfInterest = ["U City Library" : ["Church of Scientology", "Point 2"],
@@ -39,11 +38,14 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     override func viewDidLoad() {
         //TODO: Put the real current station here once the pusing of this VC is figured out with a segue
+        currStation = "Leland Avenue"
         let header = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         header.text = currStation
         header.textAlignment = .center
         header.font = UIFont.systemFont(ofSize: 30.0)
         tableView.tableHeaderView = header
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = UITableView.automaticDimension
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -63,13 +65,18 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+        let text = UITextView()
+        text.adjustsFontForContentSizeCategory = true
         if indexPath.section == sections["pointsofinterest"] {
-            cell.textLabel?.text = pointsOfInterest[currStation!]![indexPath.row]
+            text.text = pointsOfInterest[currStation!]![indexPath.row]
         }else if indexPath.section == sections["funfacts"]{
-            cell.textLabel?.text = funFacts[currStation!]![indexPath.row]
+            text.text = funFacts[currStation!]![indexPath.row]
         }else{
-            cell.textLabel?.text = "There was an error"
+            text.text = "There was an error"
         }
+        text.sizeToFit()
+//        text.layoutIfNeeded()
+        cell.addSubview(text)
         return cell
     }
     
