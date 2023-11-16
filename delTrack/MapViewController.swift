@@ -31,12 +31,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let library = MKPointAnnotation()
         library.coordinate = startCoordinate
-        library.title = "University City Library"
+        library.title = "U City Library"
         mapView.addAnnotation(library)
         
         let leland = MKPointAnnotation()
         leland.coordinate = CLLocationCoordinate2D(latitude: 38.65605564618364, longitude: -90.30623521554129)
-        leland.title = "Leland"
+        leland.title = "Leland Avenue"
         mapView.addAnnotation(leland)
         
         let cityLimit = MKPointAnnotation()
@@ -46,37 +46,37 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         let pagent = MKPointAnnotation()
         pagent.coordinate = CLLocationCoordinate2D(latitude: 38.65523190023507, longitude: -90.29781572206996)
-        pagent.title = "The Pagent"
+        pagent.title = "The Pageant"
         mapView.addAnnotation(pagent)
         
         let delmarMetrolink = MKPointAnnotation()
         delmarMetrolink.coordinate = CLLocationCoordinate2D(latitude: 38.65490577353374, longitude: -90.29433934663338)
-        delmarMetrolink.title = "Delmar Metrolink"
+        delmarMetrolink.title = "Delmar Loop MetroLink"
         mapView.addAnnotation(delmarMetrolink)
         
         let hamilton = MKPointAnnotation()
         hamilton.coordinate = CLLocationCoordinate2D(latitude: 38.654494153272225, longitude: -90.28992378668875)
-        hamilton.title = "Hamilton Avenue"
+        hamilton.title = "Hamilton Ave"
         mapView.addAnnotation(hamilton)
         
         let debalivere = MKPointAnnotation()
         debalivere.coordinate = CLLocationCoordinate2D(latitude: 38.65365433867583, longitude: -90.2843154654276)
-        debalivere.title = "Delmar and Debalivere"
+        debalivere.title = "Delmar and Debaliviere"
         mapView.addAnnotation(debalivere)
         
         let crossroads = MKPointAnnotation()
         crossroads.coordinate = CLLocationCoordinate2D(latitude: 38.6517550975623, longitude: -90.28463086479292)
-        crossroads.title = "Crossroads College Prep"
+        crossroads.title = "Crossroads School"
         mapView.addAnnotation(crossroads)
         
         let forestParkMetrolink = MKPointAnnotation()
         forestParkMetrolink.coordinate = CLLocationCoordinate2D(latitude: 38.64845356617568, longitude: -90.28524578097503)
-        forestParkMetrolink.title = "Forest Park-Debalivere Metrolink"
+        forestParkMetrolink.title = "Forest Park/Debaliviere MetroLink"
         mapView.addAnnotation(forestParkMetrolink)
         
         let historyMuseum = MKPointAnnotation()
         historyMuseum.coordinate = endCoordinate
-        historyMuseum.title = "Missouri History Museum"
+        historyMuseum.title = "Missouri History Museum/Forest Park"
         mapView.addAnnotation(historyMuseum)
         
         let directionsRequest = MKDirections.Request()
