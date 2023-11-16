@@ -38,7 +38,6 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     override func viewDidLoad() {
         //TODO: Put the real current station here once the pusing of this VC is figured out with a segue
-        currStation = "Leland Avenue"
         let header = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         header.text = currStation
         header.textAlignment = .center
