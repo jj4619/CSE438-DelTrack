@@ -80,6 +80,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
         text.sizeToFit()
         text.layoutIfNeeded()
         cell.addSubview(text)
+        cell.selectionStyle = .none
         return cell
     }
     
