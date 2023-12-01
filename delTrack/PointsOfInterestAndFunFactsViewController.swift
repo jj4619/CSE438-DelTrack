@@ -17,7 +17,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
                             "Leland Avenue" : ["Fitz's", "Blueberry Hill", "Vintage Vinyl"],
                             "City Limit" : ["Peacock Diner", "Three Kings Public House", "American Falafel"],
                             "The Pageant" : ["Magic Mini Golf", "Trolley Cafe", "Delmar Hall"],
-                            "Delmar Loop MetroLink" : ["St. Louis Artworks", "Luvitate Beauty LLC", "Prime 55 Restaurant & Lounge"],
+                            "Delmar Loop MetroLink" : ["St. Louis Artworks", "Vails Brothers Shrimp, Chicken, and Fish", "Prime 55 Restaurant & Lounge"],
                             "Hamilton Ave" : ["Krab Kingz Seafood", "Palomino Lounge", "Streetstylez Boutique"],
                             "Delmar and Debaliviere" : ["Deli Divine", "Swiish Cigar Lounge", "Eklectic Design"],
                             "Crossroads School" : ["Crossroads College Preparatory School", "Kingsbury Square Park", "St. Louis Fire Department Engine House No. 30"],
@@ -26,16 +26,16 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     
     //2 fun facts
-    let funFacts = ["U City Library" : ["The Delmar Loop was named for a streetcar turnaround that used to be near where this stop is", "Fact 2"],
-                    "Leland Avenue" : ["Near this stop is a statue of Chuck Berry, the \"Father of Rock and Roll\"", "Fact 2"],
-                    "City Limit" : ["Many Washington University in St. Louis students live right by this stop in the Lofts", "Fact 2"],
-                    "The Pageant" : ["The Pageant was named after a movie theater that once stood three blocks away", "Fact 2"],
-                    "Delmar Loop MetroLink" : ["The MetroLink can be taken all the way to the St. Louis Airport", "Fact 2"],
-                    "Hamilton Ave" : ["The Trolley Cars are parked in a facility near this stop", "Fact 2"],
-                    "Delmar and Debaliviere" : ["The Skinker-Debaliviere neighborhood was designated a local historict district by the city of St. Louis in 1978", "Fact 2"],
-                    "Crossroads School" : ["The Crossroads School was founded in 1974 by Arthur and Carol Lieber", "Fact 2"],
-                    "Forest Park/Debaliviere MetroLink" : ["The MetroLink opened July 31, 1993", "Fact 2"],
-                    "Missouri History Museum/Forest Park" : ["Forest Park first opened in 1876", "Fact 2"]]
+    let funFacts = ["U City Library" : ["The Delmar Loop has its name from an old streetcar turnaround ", "The two lion statues were made by George Julian Zolnay"],
+                    "Leland Avenue" : ["Near this stop is a statue of Chuck Berry, the \"Father of Rock and Roll\"", "Fitz's Root Beer is made according to an original recipe from 1947"],
+                    "City Limit" : ["Many WashU students live right by this stop in the Lofts", "According to the pub, the Three Kings are Kong, Elvis, and Henry VIII"],
+                    "The Pageant" : ["The Pageant was named after an old movie theater three blocks away", "The Moonrise Hotel is home to the award winning Eclipse Restaurant"],
+                    "Delmar Loop MetroLink" : ["The MetroLink can be taken all the way to the St. Louis Airport", "Festive lights are strung throughout the loop for the holiday season"],
+                    "Hamilton Ave" : ["The Trolley Cars are parked in a facility near this stop", "St. Louis was founded by French fur traders in 1764"],
+                    "Delmar and Debaliviere" : ["This neighborhood was designated a local historict district in 1978", "St. Louis was the starting point of the Lewis and Clark Expedition in 1804"],
+                    "Crossroads School" : ["The Crossroads School was founded in 1974 by Arthur and Carol Lieber", "St. Louis was the first U.S. city to host the modern Olympics"],
+                    "Forest Park/Debaliviere MetroLink" : ["The MetroLink opened July 31, 1993", "St. Louis was the fourth largest city in the U.S. in the 1800s"],
+                    "Missouri History Museum/Forest Park" : ["Forest Park first opened in 1876", "Forest Park hosted the World's Fair in 1904"]]
     
     var currStation : String?
     
