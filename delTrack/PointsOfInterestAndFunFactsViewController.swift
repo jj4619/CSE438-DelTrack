@@ -12,17 +12,20 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     let sections = ["pointsofinterest" : 0, "funfacts" : 1]
     
-    let pointsOfInterest = ["U City Library" : ["Church of Scientology", "Point 2"],
-                            "Leland Avenue" : ["Fitz's", "Point 2"],
-                            "City Limit" : ["Peacock Diner", "Point 2"],
-                            "The Pageant" : ["Magic Mini Golf", "Point 2"],
-                            "Delmar Loop MetroLink" : ["St. Louis Artworks", "Point 2"],
-                            "Hamilton Ave" : ["Krab Kingz Seafood", "Point 2"],
-                            "Delmar and Debaliviere" : ["St. Louis Fire Department Engine House No. 30", "Point 2"],
-                            "Crossroads School" : ["Crossroads College Preparatory School", "Point 2"],
-                            "Forest Park/Debaliviere MetroLink" : ["Ocean Grill STL", "Point 2"],
-                            "Missouri History Museum/Forest Park" : ["Boathouse at Forest Park", "Point 2"]]
     
+    let pointsOfInterest = ["U City Library" : ["Church of Scientology", "Seoul Taco", "U-City Grill"],
+                            "Leland Avenue" : ["Fitz's", "Blueberry Hill", "Vintage Vinyl"],
+                            "City Limit" : ["Peacock Diner", "Three Kings Public House", "American Falafel"],
+                            "The Pageant" : ["Magic Mini Golf", "Trolley Cafe", "Delmar Hall"],
+                            "Delmar Loop MetroLink" : ["St. Louis Artworks", "Luvitate Beauty LLC", "Prime 55 Restaurant & Lounge"],
+                            "Hamilton Ave" : ["Krab Kingz Seafood", "Palomino Lounge", "Streetstylez Boutique"],
+                            "Delmar and Debaliviere" : ["Deli Divine", "Swiish Cigar Lounge", "Eklectic Design"],
+                            "Crossroads School" : ["Crossroads College Preparatory School", "Kingsbury Square Park", "St. Louis Fire Department Engine House No. 30"],
+                            "Forest Park/Debaliviere MetroLink" : ["Ocean Grill STL", "Taco Love", "Shakespeare Company-St Louis"],
+                            "Missouri History Museum/Forest Park" : ["Boathouse at Forest Park", "The Muny", "Saint Louis Art Museum"]]
+    
+    
+    //2 fun facts
     let funFacts = ["U City Library" : ["The Delmar Loop was named for a streetcar turnaround that used to be near where this stop is", "Fact 2"],
                     "Leland Avenue" : ["Near this stop is a statue of Chuck Berry, the \"Father of Rock and Roll\"", "Fact 2"],
                     "City Limit" : ["Many Washington University in St. Louis students live right by this stop in the Lofts", "Fact 2"],
@@ -41,7 +44,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
         let header = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
         header.text = currStation
         header.textAlignment = .center
-        header.font = UIFont.systemFont(ofSize: 30.0)
+        header.font = UIFont.systemFont(ofSize: 23.0)
         tableView.tableHeaderView = header
         tableView.estimatedRowHeight = 100
         tableView.rowHeight = UITableView.automaticDimension
@@ -74,7 +77,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
             text.text = "There was an error"
         }
         text.sizeToFit()
-//        text.layoutIfNeeded()
+        text.layoutIfNeeded()
         cell.addSubview(text)
         return cell
     }
