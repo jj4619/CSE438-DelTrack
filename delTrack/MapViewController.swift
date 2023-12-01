@@ -384,6 +384,12 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             location = []
         }
 //        print(seconds_ratio)
+
+        let location_dot = MKPointAnnotation()
+        location_dot.coordinate = CLLocationCoordinate2D(latitude: location[0], longitude: location[1])
+        location_dot.title = "Trolly"
+        mapView.addAnnotation(location_dot)
+        
         print(location)
         return location
     }
