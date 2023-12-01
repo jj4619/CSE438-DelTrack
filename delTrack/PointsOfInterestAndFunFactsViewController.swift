@@ -53,6 +53,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(currStation != nil){
+            print(currStation!)
             if(section == sections["pointsofinterest"]){
                 return pointsOfInterest[currStation!]!.count
             }else if(section == sections["funfacts"]){
@@ -70,6 +71,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
         let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
         let text = UITextView()
         text.adjustsFontForContentSizeCategory = true
+        text.font = UIFont(name: "Avenir", size: 11.5)
         if indexPath.section == sections["pointsofinterest"] {
             text.text = pointsOfInterest[currStation!]![indexPath.row]
         }else if indexPath.section == sections["funfacts"]{

@@ -121,9 +121,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         
         // Identifier for stop annotations
             let stopIdentifier = "StopAnnotation"
-        let trollyIdentifier = "TrollyAnnotation"
+        let trollyIdentifier = "TrolleyAnnotation"
         
-        if annotation.title == "Trolly" {
+        if annotation.title == "Trolley" {
 
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: trollyIdentifier)
 
@@ -189,7 +189,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                   // Create the trolley annotation
                   let newTrolleyAnnotation = MKPointAnnotation()
                   newTrolleyAnnotation.coordinate = newLocation
-                  newTrolleyAnnotation.title = "Trolly"
+                  newTrolleyAnnotation.title = "Trolley"
 
                   mapView.addAnnotation(newTrolleyAnnotation)
                   trolleyAnnotation = newTrolleyAnnotation
@@ -237,7 +237,9 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     func mapView(_ mapView: MKMapView, didSelect view: MKAnnotationView) {
         let PIVC =  PointsOfInterestAndFunFactsViewController()
         PIVC.currStation = view.annotation?.title ?? "U City Library"
-        navigationController?.pushViewController(PIVC, animated: true)
+        if(view.annotation?.title != "Trolley"){
+            navigationController?.pushViewController(PIVC, animated: true)
+        }
     }
     
     func locationFunction() -> Array<Any>{
