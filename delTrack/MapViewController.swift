@@ -175,7 +175,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     //reference: https://stackoverflow.com/questions/48386782/timer-selector-explanation
     //function to start the timer
     func startUpdatingLocation() {
-        updateTimer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(fetchAndUpdateTrolleyLocation), userInfo: nil, repeats: true)
+        updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(fetchAndUpdateTrolleyLocation), userInfo: nil, repeats: true)
     }
     
     
