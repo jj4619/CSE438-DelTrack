@@ -42,6 +42,7 @@ class PointsOfInterestAndFunFactsViewController : UITableViewController {
     override func viewDidLoad() {
         //TODO: Put the real current station here once the pusing of this VC is figured out with a segue
         let header = UITextView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 50))
+        header.isEditable = false
         header.text = currStation
         header.textAlignment = .center
         header.font = UIFont.systemFont(ofSize: 23.0)
