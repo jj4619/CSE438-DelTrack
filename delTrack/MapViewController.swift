@@ -13,7 +13,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
 
     @IBOutlet weak var mapView: MKMapView!
     var updateTimer: Timer? //Timer for updating trolley
-    var trolleyAnnotation: MKPointAnnotation? //Trolley annotation
+    var trolleyAnnotation: MKPointAnnotation? //Trolley annotation variable
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -22,7 +22,6 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         mapView.delegate = self
         locationManager.delegate = self
         locationManager.requestWhenInUseAuthorization()
-        locationManager.startUpdatingLocation()
         mapView.showsUserLocation = true
         let centerCoordinate = CLLocationCoordinate2D(latitude: 38.655526, longitude: -90.298798)
         let span = MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04)
@@ -116,38 +115,31 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     
     //reference 1: https://stackoverflow.com/questions/63020138/how-to-custom-the-image-of-mkannotation-pin
     //reference 2: https://stackoverflow.com/questions/27656090/handling-overlapping-mkannotationviews
+    //reference 3: https://developer.apple.com/documentation/mapkit/mapkit_for_appkit_and_uikit/mapkit_annotations/annotating_a_map_with_custom_data
+    //reference 4: https://www.hackingwithswift.com/example-code/location/how-to-add-annotations-to-mkmapview-using-mkpointannotation-and-mkpinannotationview
     //function to give map view custom pins for certain annotations
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         
         // Identifier for stop annotations
-            let stopIdentifier = "StopAnnotation"
-        let trollyIdentifier = "TrolleyAnnotation"
+        let stopIdentifier = "stopAnnotation"
+        let trollyIdentifier = "trolleyAnnotation"
         
         if annotation.title == "Trolley" {
-
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: trollyIdentifier)
-
             if annotationView == nil {
-                // Create a new annotation view
                 annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: trollyIdentifier)
                 annotationView?.canShowCallout = true // Optionally show callout on tap
             } else {
-                // Reuse the existing annotation view
                 annotationView?.annotation = annotation
             }
-
-            // Set your custom image for the trolley annotation
-            annotationView?.image = UIImage(named: "trolleyIcon") // Replace 'trolleyIcon' with your image's name
+            annotationView?.image = UIImage(named: "trolleyIcon")
             //give trolley a higher z priority
             annotationView?.layer.zPosition = 1
             return annotationView
         }
-        
         else{
             var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: stopIdentifier)
-
             if annotationView == nil {
-                // reuse stop views
                 annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: stopIdentifier)
                 annotationView?.canShowCallout = true
             } else {
@@ -157,71 +149,54 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             annotationView?.layer.zPosition = 0
             return annotationView
         }
-
     }
 
+    //reference: https://stackoverflow.com/questions/48386782/timer-selector-explanation
     //start timer on map view load
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        startUpdatingLocation()
+        updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(getTrolleyCoords), userInfo: nil, repeats: true)
     }
     
+    //reference: https://www.hackingwithswift.com/articles/117/the-ultimate-guide-to-timer
     //end timer on map view disappear
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         updateTimer?.invalidate()
     }
-
-    //reference: https://stackoverflow.com/questions/48386782/timer-selector-explanation
-    //function to start the timer
-    func startUpdatingLocation() {
-        updateTimer = Timer.scheduledTimer(timeInterval: 0.5, target: self, selector: #selector(fetchAndUpdateTrolleyLocation), userInfo: nil, repeats: true)
-    }
-    
     
     // reference for objc func: https://stackoverflow.com/questions/48386782/timer-selector-explanation
-    //function to update trolley pin
-    @objc func updateTrolleyLocationOnMap(_ newLocation: CLLocationCoordinate2D) {
-        // Add or update a marker on the map at the new location
-        // Assuming you have a trolley annotation already added to the map
-           // Update its location instead of adding a new one
+    //function to create/update trolley pin
+    @objc func annotateTrolleyPin(_ newLocation: CLLocationCoordinate2D) {
         if trolleyAnnotation == nil {
-                  // Create the trolley annotation
-                  let newTrolleyAnnotation = MKPointAnnotation()
-                  newTrolleyAnnotation.coordinate = newLocation
-                  newTrolleyAnnotation.title = "Trolley"
-
-                  mapView.addAnnotation(newTrolleyAnnotation)
-                  trolleyAnnotation = newTrolleyAnnotation
+                // Create trolley pin
+                let tmpTrolleyAnnotation = MKPointAnnotation()
+                tmpTrolleyAnnotation .coordinate = newLocation
+                tmpTrolleyAnnotation .title = "Trolley"
+                mapView.addAnnotation(tmpTrolleyAnnotation)
+                trolleyAnnotation = tmpTrolleyAnnotation
               } else {
-                  // Update the existing trolley annotation's location
+                  // If pin already exists, just update location
                   trolleyAnnotation?.coordinate = newLocation
               }
     }
     
-    //function to get the trolley location from location function and then feed it to annotation function
-    @objc func fetchAndUpdateTrolleyLocation() {
-            // get location
+    //function to get the trolley coords from location function and then asynchronously feed it to annotation function
+    @objc func getTrolleyCoords() {
             let coords = locationFunction()
-            
-            // Check if the location array is not empty and has valid coordinates
             let lat = coords[0] as? CLLocationDegrees
             let long = coords[1] as? CLLocationDegrees
-
+            // Check if coords valid
             if (lat != nil && long != nil){
                 //can force unwrap because we check for nil
-                let CLLocation = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
-                print(CLLocation)
+                let CLLocation2D = CLLocationCoordinate2D(latitude: lat!, longitude: long!)
+                print(CLLocation2D)
             //asynchronously update location
             DispatchQueue.main.async {
-                self.updateTrolleyLocationOnMap(CLLocation)
+                self.annotateTrolleyPin(CLLocation2D)
             }
         }
     }
-    
-    
-    
-
     
     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
             if let polyline = overlay as? MKPolyline {
