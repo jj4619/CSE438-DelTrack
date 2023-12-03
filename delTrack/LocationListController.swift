@@ -104,7 +104,7 @@ class LocationListController: UIViewController, UITableViewDataSource, UITableVi
         data.append(hamilton)
 
         
-        let debalivere = ("Delmar and Debalivier", CLLocationCoordinate2D(latitude: 38.65365433867583, longitude: -90.2843154654276))
+        let debalivere = ("Delmar and Debaliviere", CLLocationCoordinate2D(latitude: 38.65365433867583, longitude: -90.2843154654276))
         
         data.append(debalivere)
 
@@ -120,7 +120,7 @@ class LocationListController: UIViewController, UITableViewDataSource, UITableVi
         data.append(forestParkMetrolink)
 
         
-        let historyMuseum = ("Missouri History Museum / Forest Park", endCoordinate)
+        let historyMuseum = ("Missouri History Museum/Forest Park", endCoordinate)
             
         data.append(historyMuseum)
         
