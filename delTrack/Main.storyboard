@@ -34,14 +34,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bHj-N4-fvx">
-                                <rect key="frame" x="16" y="103" width="361" height="529"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHj-N4-fvx">
+                                <rect key="frame" x="16" y="179" width="361" height="595"/>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map View" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KEQ-3B-JJz">
+                                <rect key="frame" x="111.66666666666669" y="105" width="170" height="50"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XFh-iH-iWV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KEQ-3B-JJz" firstAttribute="centerX" secondItem="XFh-iH-iWV" secondAttribute="centerX" id="Bdc-un-JBc"/>
+                            <constraint firstItem="bHj-N4-fvx" firstAttribute="leading" secondItem="XFh-iH-iWV" secondAttribute="leading" constant="16" id="Oaa-1l-9Pv"/>
+                            <constraint firstItem="KEQ-3B-JJz" firstAttribute="top" secondItem="XFh-iH-iWV" secondAttribute="top" constant="49" id="Rzf-5g-HXA"/>
+                            <constraint firstItem="XFh-iH-iWV" firstAttribute="bottom" secondItem="bHj-N4-fvx" secondAttribute="bottom" constant="29" id="bkq-8s-yhP"/>
+                            <constraint firstItem="XFh-iH-iWV" firstAttribute="trailing" secondItem="bHj-N4-fvx" secondAttribute="trailing" constant="16" id="eaR-iw-z33"/>
+                            <constraint firstItem="bHj-N4-fvx" firstAttribute="top" secondItem="KEQ-3B-JJz" secondAttribute="bottom" constant="24" id="rtc-us-ThS"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fby-Sb-ovt"/>
                     <connections>
@@ -199,6 +212,9 @@
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
