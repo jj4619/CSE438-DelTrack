@@ -221,7 +221,7 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
             let date = Date()
             let calendar = Calendar.current
             let hour = calendar.component(.hour, from: date)
-            var minutes = calendar.component(.minute, from: date)
+            let minutes = calendar.component(.minute, from: date)
             let seconds = calendar.component(.second, from: date)
             
     //        double CurrentTime = CACurrentMediaTime();
