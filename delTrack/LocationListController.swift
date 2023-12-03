@@ -48,6 +48,13 @@ class LocationListController: UIViewController, UITableViewDataSource, UITableVi
         return 100 // Set the cell height to 100 points (adjust as needed)
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let name = data[indexPath.row].0
+        let PIVC =  PointsOfInterestAndFunFactsViewController()
+        PIVC.currStation = name
+        navigationController?.pushViewController(PIVC, animated: true)
+        }
+    
     func distanceFromUser(location: CLLocationCoordinate2D, userLocation: CLLocationCoordinate2D) -> CLLocationDistance{
         let stop = CLLocation(latitude: location.latitude, longitude: location.longitude)
         let user = CLLocation(latitude: userLocation.latitude, longitude: userLocation.longitude)

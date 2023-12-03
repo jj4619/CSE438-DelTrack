@@ -105,13 +105,13 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     //function to keep user in bound of Delmar Loop
-//    func mapView(_ mapView: MKMapView, regionDidChangeAnimated change: Bool) {
-//            if mapView.region.span.latitudeDelta > 0.04 || mapView.region.span.longitudeDelta > 0.04 {
-//                let restrictedRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.655526, longitude: -90.298798), span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
-//                mapView.setRegion(restrictedRegion, animated: true)
-//                
-//            }
-//        }
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated change: Bool) {
+            if mapView.region.span.latitudeDelta > 0.04 || mapView.region.span.longitudeDelta > 0.04 {
+                let restrictedRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 38.655526, longitude: -90.298798), span: MKCoordinateSpan(latitudeDelta: 0.04, longitudeDelta: 0.04))
+                mapView.setRegion(restrictedRegion, animated: true)
+                
+            }
+        }
     
     //reference 1: https://stackoverflow.com/questions/63020138/how-to-custom-the-image-of-mkannotation-pin
     //reference 2: https://stackoverflow.com/questions/27656090/handling-overlapping-mkannotationviews
