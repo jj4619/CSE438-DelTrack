@@ -122,22 +122,28 @@ class LocationListController: UIViewController, UITableViewDataSource, UITableVi
             let latitude = storedLocation[0]
             let longitude = storedLocation[1]
       
-            // Now you have latitude and longitude values to use
-            // You might create a CLLocationCoordinate2D or use them as needed
             self.currentUserLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            print("data: ")
-
-            print(data)
             locationList.reloadData()
 
-            // Use retrievedCoordinate as needed in this view controller
         } else {
-            // Handle case where location isn't available in UserDefaults
-            // Perhaps default to a certain location or display an error message
+           
         }
-    // Do any additional setup after loading the view.
     }
         
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let storedLocation = UserDefaults.standard.array(forKey: "currentLoc") as? [Double], storedLocation.count == 2 {
+            let latitude = storedLocation[0]
+            let longitude = storedLocation[1]
+      
+            self.currentUserLocation = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+            locationList.reloadData()
+
+        } else {
+           
+        }
+    }
 
 }
 

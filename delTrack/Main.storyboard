@@ -199,17 +199,27 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="z3q-YF-fFP">
-                                <rect key="frame" x="0.0" y="78" width="393" height="655"/>
+                                <rect key="frame" x="0.0" y="140" width="393" height="653"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Trolley Stops" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kFa-9D-uuU">
+                                <rect key="frame" x="57" y="78" width="279" height="54"/>
+                                <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="36"/>
+                                <color key="textColor" systemColor="linkColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="tGK-JR-KTT"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="z3q-YF-fFP" firstAttribute="trailing" secondItem="tGK-JR-KTT" secondAttribute="trailing" id="B2Y-So-Zxq"/>
-                            <constraint firstItem="tGK-JR-KTT" firstAttribute="bottom" secondItem="z3q-YF-fFP" secondAttribute="bottom" constant="70" id="C2P-N9-Rzr"/>
-                            <constraint firstItem="z3q-YF-fFP" firstAttribute="top" secondItem="tGK-JR-KTT" secondAttribute="top" constant="22" id="FcL-eU-uME"/>
+                            <constraint firstItem="tGK-JR-KTT" firstAttribute="bottom" secondItem="z3q-YF-fFP" secondAttribute="bottom" constant="10" id="C2P-N9-Rzr"/>
+                            <constraint firstItem="kFa-9D-uuU" firstAttribute="top" secondItem="tGK-JR-KTT" secondAttribute="top" constant="22" id="Ezn-Ln-KMr"/>
+                            <constraint firstItem="z3q-YF-fFP" firstAttribute="top" secondItem="tGK-JR-KTT" secondAttribute="top" constant="84" id="FcL-eU-uME"/>
+                            <constraint firstItem="tGK-JR-KTT" firstAttribute="trailing" secondItem="kFa-9D-uuU" secondAttribute="trailing" constant="57" id="HnH-pm-CcB"/>
                             <constraint firstItem="z3q-YF-fFP" firstAttribute="leading" secondItem="tGK-JR-KTT" secondAttribute="leading" id="SkR-4e-I3g"/>
+                            <constraint firstItem="kFa-9D-uuU" firstAttribute="leading" secondItem="tGK-JR-KTT" secondAttribute="leading" constant="57" id="Tqz-4R-Xo4"/>
+                            <constraint firstItem="z3q-YF-fFP" firstAttribute="top" secondItem="kFa-9D-uuU" secondAttribute="bottom" constant="8" id="UwV-Vu-fia"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="hhx-yY-u1n"/>
